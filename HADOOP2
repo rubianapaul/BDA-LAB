@@ -1,0 +1,292 @@
+hduser@bmsce-OptiPlex-3060:~/Desktop$ start-all.sh 
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+22/06/25 09:25:17 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [localhost]
+hduser@localhost's password: 
+hduser@localhost's password: localhost: Permission denied, please try again.
+
+localhost: Permission denied, please try again.
+hduser@localhost's password: 
+localhost: starting namenode, logging to /usr/local/hadoop/logs/hadoop-hduser-namenode-bmsce-OptiPlex-3060.out
+hduser@localhost's password: 
+localhost: starting datanode, logging to /usr/local/hadoop/logs/hadoop-hduser-datanode-bmsce-OptiPlex-3060.out
+Starting secondary namenodes [0.0.0.0]
+hduser@0.0.0.0's password: 
+0.0.0.0: starting secondarynamenode, logging to /usr/local/hadoop/logs/hadoop-hduser-secondarynamenode-bmsce-OptiPlex-3060.out
+22/06/25 09:25:56 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+starting yarn daemons
+starting resourcemanager, logging to /usr/local/hadoop/logs/yarn-hduser-resourcemanager-bmsce-OptiPlex-3060.out
+hduser@localhost's password: 
+localhost: starting nodemanager, logging to /usr/local/hadoop/logs/yarn-hduser-nodemanager-bmsce-OptiPlex-3060.out
+hduser@bmsce-OptiPlex-3060:~/Desktop$ jps 
+2976 NameNode
+3840 NodeManager
+3511 ResourceManager
+3143 DataNode
+3352 SecondaryNameNode
+3962 Jps
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -mkdir /rubiana
+22/06/25 09:27:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -mkdir /1bm19cs208
+22/06/25 09:28:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@bmsce-OptiPlex-3060:~/Desktop$ ls
+6b.txt  copy2.txt  copy.txt  Merge.txt  newmerge.txt  rgs  sample.txt  WC.txt  welcome.txt  Welcome.txt  wordcount156.jar
+hduser@bmsce-OptiPlex-3060:~/Desktop$ ls /rubiana 
+ls: cannot access '/rubiana': No such file or directory
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -ls
+22/06/25 09:30:29 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ls: `.': No such file or directory
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs copy -FromLOcal /home/hduser/Desktop/text.txt
+copy: Unknown command
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs put  -FromLOcal /home/hduser/Desktop/text.txt
+put: Unknown command
+Did you mean -put?  This command begins with a dash.
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -put  FromLOcal /home/hduser/Desktop/text.txt
+22/06/25 09:33:09 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+put: `/home/hduser/Desktop/text.txt': No such file or directory
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hadoop jar /home/hduser/Desktop/topn_208.jar TopN /home/hduser/Desktop/text.txt /output208
+Exception in thread "main" java.lang.ClassNotFoundException: TopN
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:214)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hadoop fs ls /output208
+ls: Unknown command
+Did you mean -ls?  This command begins with a dash.
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hadoop fs -ls /output208
+22/06/25 10:24:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ls: `/output208': No such file or directory
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hadoop 
+Usage: hadoop [--config confdir] COMMAND
+       where COMMAND is one of:
+  fs                   run a generic filesystem user client
+  version              print the version
+  jar <jar>            run a jar file
+  checknative [-a|-h]  check native hadoop and compression libraries availability
+  distcp <srcurl> <desturl> copy file or directories recursively
+  archive -archiveName NAME -p <parent path> <src>* <dest> create a hadoop archive
+  classpath            prints the class path needed to get the
+  credential           interact with credential providers
+                       Hadoop jar and the required libraries
+  daemonlog            get/set the log level for each daemon
+  trace                view and modify Hadoop tracing settings
+ or
+  CLASSNAME            run the class named CLASSNAME
+
+Most commands print help when invoked w/o parameters.
+hduser@bmsce-OptiPlex-3060:~/Desktop$ su hduser
+Password: 
+su: Authentication failure
+hduser@bmsce-OptiPlex-3060:~/Desktop$ su hduser
+Password: 
+su: Authentication failure
+hduser@bmsce-OptiPlex-3060:~/Desktop$ su hduser
+Password: 
+su: Authentication failure
+hduser@bmsce-OptiPlex-3060:~/Desktop$ su hduser 
+Password: 
+hduser@bmsce-OptiPlex-3060:~/Desktop$ start-all.sh 
+This script is Deprecated. Instead use start-dfs.sh and start-yarn.sh
+22/06/25 10:28:38 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Starting namenodes on [localhost]
+hduser@localhost's password: 
+localhost: namenode running as process 2976. Stop it first.
+hduser@localhost's password: 
+localhost: datanode running as process 3143. Stop it first.
+Starting secondary namenodes [0.0.0.0]
+hduser@0.0.0.0's password: 
+0.0.0.0: secondarynamenode running as process 3352. Stop it first.
+22/06/25 10:28:59 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+starting yarn daemons
+resourcemanager running as process 3511. Stop it first.
+hduser@localhost's password: 
+localhost: nodemanager running as process 3840. Stop it first.
+hduser@bmsce-OptiPlex-3060:~/Desktop$ jps 
+7696 Jps
+2976 NameNode
+3840 NodeManager
+3511 ResourceManager
+3143 DataNode
+5496 org.eclipse.equinox.launcher_1.5.600.v20191014-2022.jar
+3352 SecondaryNameNode
+hduser@bmsce-OptiPlex-3060:~/Desktop$ ^C
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -mkdir /rubiana
+22/06/25 10:30:21 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+mkdir: `/rubiana': File exists
+hduser@bmsce-OptiPlex-3060:~/Desktop$ ls
+6b.txt  copy2.txt  copy.txt  Merge.txt  newmerge.txt  rgs  sample.txt  text.txt  TopN_1bm19cs208  TopN_1BM19CS208.jar  topn_208.jar  WC.txt  welcome.txt  Welcome.txt  wordcount156.jar
+hduser@bmsce-OptiPlex-3060:~/Desktop$ ^C
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -mkdir /rubiana
+22/06/25 10:31:27 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+mkdir: `/rubiana': File exists
+hduser@bmsce-OptiPlex-3060:~/Desktop$  hadoop jar /home/hduser/Desktop/topn_208.jar TopN /home/hduser/Desktop/text.txt /output208
+Exception in thread "main" java.lang.ClassNotFoundException: TopN
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:387)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:348)
+	at org.apache.hadoop.util.RunJar.run(RunJar.java:214)
+	at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+hduser@bmsce-OptiPlex-3060:~/Desktop$ ^C
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hadoop fs -ls /output208
+22/06/25 10:32:19 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+ls: `/output208': No such file or directory
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -copyFromLocal /home/hduser/Desktop/text.txt /rubiana 
+22/06/25 10:34:52 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -ls /rubiana 
+22/06/25 10:35:15 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Found 1 items
+-rw-r--r--   1 hduser supergroup         62 2022-06-25 10:34 /rubiana/text.txt
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hadoop jar /home/hduser/Desktop/topn_208.jar topn1bm19cs208.TopN /rubiana/text.txt /outrubiana
+22/06/25 10:39:04 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+22/06/25 10:39:04 INFO Configuration.deprecation: session.id is deprecated. Instead, use dfs.metrics.session-id
+22/06/25 10:39:04 INFO jvm.JvmMetrics: Initializing JVM Metrics with processName=JobTracker, sessionId=
+22/06/25 10:39:04 INFO input.FileInputFormat: Total input paths to process : 1
+22/06/25 10:39:04 INFO mapreduce.JobSubmitter: number of splits:1
+22/06/25 10:39:04 INFO mapreduce.JobSubmitter: Submitting tokens for job: job_local1837719710_0001
+22/06/25 10:39:04 INFO mapreduce.Job: The url to track the job: http://localhost:8080/
+22/06/25 10:39:04 INFO mapreduce.Job: Running job: job_local1837719710_0001
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: OutputCommitter set in config null
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: OutputCommitter is org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: Waiting for map tasks
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: Starting task: attempt_local1837719710_0001_m_000000_0
+22/06/25 10:39:04 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+22/06/25 10:39:04 INFO mapred.MapTask: Processing split: hdfs://localhost:54310/rubiana/text.txt:0+62
+22/06/25 10:39:04 INFO mapred.MapTask: (EQUATOR) 0 kvi 26214396(104857584)
+22/06/25 10:39:04 INFO mapred.MapTask: mapreduce.task.io.sort.mb: 100
+22/06/25 10:39:04 INFO mapred.MapTask: soft limit at 83886080
+22/06/25 10:39:04 INFO mapred.MapTask: bufstart = 0; bufvoid = 104857600
+22/06/25 10:39:04 INFO mapred.MapTask: kvstart = 26214396; length = 6553600
+22/06/25 10:39:04 INFO mapred.MapTask: Map output collector class = org.apache.hadoop.mapred.MapTask$MapOutputBuffer
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: 
+22/06/25 10:39:04 INFO mapred.MapTask: Starting flush of map output
+22/06/25 10:39:04 INFO mapred.MapTask: Spilling map output
+22/06/25 10:39:04 INFO mapred.MapTask: bufstart = 0; bufend = 93; bufvoid = 104857600
+22/06/25 10:39:04 INFO mapred.MapTask: kvstart = 26214396(104857584); kvend = 26214360(104857440); length = 37/6553600
+22/06/25 10:39:04 INFO mapred.MapTask: Finished spill 0
+22/06/25 10:39:04 INFO mapred.Task: Task:attempt_local1837719710_0001_m_000000_0 is done. And is in the process of committing
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: map
+22/06/25 10:39:04 INFO mapred.Task: Task 'attempt_local1837719710_0001_m_000000_0' done.
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: Finishing task: attempt_local1837719710_0001_m_000000_0
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: map task executor complete.
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: Waiting for reduce tasks
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: Starting task: attempt_local1837719710_0001_r_000000_0
+22/06/25 10:39:04 INFO mapred.Task:  Using ResourceCalculatorProcessTree : [ ]
+22/06/25 10:39:04 INFO mapred.ReduceTask: Using ShuffleConsumerPlugin: org.apache.hadoop.mapreduce.task.reduce.Shuffle@7ecedbb9
+22/06/25 10:39:04 INFO reduce.MergeManagerImpl: MergerManager: memoryLimit=334338464, maxSingleShuffleLimit=83584616, mergeThreshold=220663392, ioSortFactor=10, memToMemMergeOutputsThreshold=10
+22/06/25 10:39:04 INFO reduce.EventFetcher: attempt_local1837719710_0001_r_000000_0 Thread started: EventFetcher for fetching Map Completion Events
+22/06/25 10:39:04 INFO reduce.LocalFetcher: localfetcher#1 about to shuffle output of map attempt_local1837719710_0001_m_000000_0 decomp: 115 len: 119 to MEMORY
+22/06/25 10:39:04 INFO reduce.InMemoryMapOutput: Read 115 bytes from map-output for attempt_local1837719710_0001_m_000000_0
+22/06/25 10:39:04 INFO reduce.MergeManagerImpl: closeInMemoryFile -> map-output of size: 115, inMemoryMapOutputs.size() -> 1, commitMemory -> 0, usedMemory ->115
+22/06/25 10:39:04 INFO reduce.EventFetcher: EventFetcher is interrupted.. Returning
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: 1 / 1 copied.
+22/06/25 10:39:04 INFO reduce.MergeManagerImpl: finalMerge called with 1 in-memory map-outputs and 0 on-disk map-outputs
+22/06/25 10:39:04 INFO mapred.Merger: Merging 1 sorted segments
+22/06/25 10:39:04 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 108 bytes
+22/06/25 10:39:04 INFO reduce.MergeManagerImpl: Merged 1 segments, 115 bytes to disk to satisfy reduce memory limit
+22/06/25 10:39:04 INFO reduce.MergeManagerImpl: Merging 1 files, 119 bytes from disk
+22/06/25 10:39:04 INFO reduce.MergeManagerImpl: Merging 0 segments, 0 bytes from memory into reduce
+22/06/25 10:39:04 INFO mapred.Merger: Merging 1 sorted segments
+22/06/25 10:39:04 INFO mapred.Merger: Down to the last merge-pass, with 1 segments left of total size: 108 bytes
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: 1 / 1 copied.
+22/06/25 10:39:04 INFO Configuration.deprecation: mapred.skip.on is deprecated. Instead, use mapreduce.job.skiprecords
+22/06/25 10:39:04 INFO mapred.Task: Task:attempt_local1837719710_0001_r_000000_0 is done. And is in the process of committing
+22/06/25 10:39:04 INFO mapred.LocalJobRunner: 1 / 1 copied.
+22/06/25 10:39:04 INFO mapred.Task: Task attempt_local1837719710_0001_r_000000_0 is allowed to commit now
+22/06/25 10:39:05 INFO output.FileOutputCommitter: Saved output of task 'attempt_local1837719710_0001_r_000000_0' to hdfs://localhost:54310/outrubiana/_temporary/0/task_local1837719710_0001_r_000000
+22/06/25 10:39:05 INFO mapred.LocalJobRunner: reduce > reduce
+22/06/25 10:39:05 INFO mapred.Task: Task 'attempt_local1837719710_0001_r_000000_0' done.
+22/06/25 10:39:05 INFO mapred.LocalJobRunner: Finishing task: attempt_local1837719710_0001_r_000000_0
+22/06/25 10:39:05 INFO mapred.LocalJobRunner: reduce task executor complete.
+22/06/25 10:39:05 INFO mapreduce.Job: Job job_local1837719710_0001 running in uber mode : false
+22/06/25 10:39:05 INFO mapreduce.Job:  map 100% reduce 100%
+22/06/25 10:39:05 INFO mapreduce.Job: Job job_local1837719710_0001 completed successfully
+22/06/25 10:39:05 INFO mapreduce.Job: Counters: 38
+	File System Counters
+		FILE: Number of bytes read=18034
+		FILE: Number of bytes written=519245
+		FILE: Number of read operations=0
+		FILE: Number of large read operations=0
+		FILE: Number of write operations=0
+		HDFS: Number of bytes read=124
+		HDFS: Number of bytes written=30
+		HDFS: Number of read operations=13
+		HDFS: Number of large read operations=0
+		HDFS: Number of write operations=4
+	Map-Reduce Framework
+		Map input records=10
+		Map output records=10
+		Map output bytes=93
+		Map output materialized bytes=119
+		Input split bytes=104
+		Combine input records=0
+		Combine output records=0
+		Reduce input groups=4
+		Reduce shuffle bytes=119
+		Reduce input records=10
+		Reduce output records=4
+		Spilled Records=20
+		Shuffled Maps =1
+		Failed Shuffles=0
+		Merged Map outputs=1
+		GC time elapsed (ms)=1
+		CPU time spent (ms)=0
+		Physical memory (bytes) snapshot=0
+		Virtual memory (bytes) snapshot=0
+		Total committed heap usage (bytes)=471859200
+	Shuffle Errors
+		BAD_ID=0
+		CONNECTION=0
+		IO_ERROR=0
+		WRONG_LENGTH=0
+		WRONG_MAP=0
+		WRONG_REDUCE=0
+	File Input Format Counters 
+		Bytes Read=62
+	File Output Format Counters 
+		Bytes Written=30
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs 
+Usage: hdfs [--config confdir] COMMAND
+       where COMMAND is one of:
+  dfs                  run a filesystem command on the file systems supported in Hadoop.
+  namenode -format     format the DFS filesystem
+  secondarynamenode    run the DFS secondary namenode
+  namenode             run the DFS namenode
+  journalnode          run the DFS journalnode
+  zkfc                 run the ZK Failover Controller daemon
+  datanode             run a DFS datanode
+  dfsadmin             run a DFS admin client
+  haadmin              run a DFS HA admin client
+  fsck                 run a DFS filesystem checking utility
+  balancer             run a cluster balancing utility
+  jmxget               get JMX exported values from NameNode or DataNode.
+  mover                run a utility to move block replicas across
+                       storage types
+  oiv                  apply the offline fsimage viewer to an fsimage
+  oiv_legacy           apply the offline fsimage viewer to an legacy fsimage
+  oev                  apply the offline edits viewer to an edits file
+  fetchdt              fetch a delegation token from the NameNode
+  getconf              get config values from configuration
+  groups               get the groups which users belong to
+  snapshotDiff         diff two snapshots of a directory or diff the
+                       current directory contents with a snapshot
+  lsSnapshottableDir   list all snapshottable dirs owned by the current user
+						Use -help to see options
+  portmap              run a portmap service
+  nfs3                 run an NFS version 3 gateway
+  cacheadmin           configure the HDFS cache
+  crypto               configure HDFS encryption zones
+  storagepolicies      get all the existing block storage policies
+  version              print the version
+
+Most commands print help when invoked w/o parameters.
+hduser@bmsce-OptiPlex-3060:~/Desktop$ hdfs dfs -cat /outrubiana/*
+22/06/25 10:39:32 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+cats	4
+dogs	3
+frogs	2
+toads	1
